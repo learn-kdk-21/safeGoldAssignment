@@ -1,33 +1,58 @@
-.product-price {
-  font: 600 20px / 15px Sarabun;
-  color: #00bbb4;
-  margin: 6% 0px;
-}
-// font-family: 'Sarabun', sans-serif;
-.MuiPaper-rounded {
-  box-shadow: unset;
-}
-.contentDiv {
+.productCardParent {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  flex-direction: column;
-  padding-bottom: 20px;
-  min-height: 480px;
-  border: 1px solid #d5d5d5;
-  box-sizing: border-box;
-  .cardContentWrap {
-    .MuiCardContent-root {
-      text-align: center;
-    }
-    .MuiTypography-root {
-      font-weight: 600;
-      font-size: 18px;
-      font-family: "Sarabun", sans-serif !important;
+  justify-content: center;
+  margin: 50px 100px;
+  .productCardWrap {
+    flex: 0 0 32.333%;
+    // margin-left: 100px;
+    .percentWrap {
+      height: 20px;
+      width: 20px;
+      background-color: rgb(0, 187, 180);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
     }
     .product-price {
+      font: 600 20px / 15px Sarabun;
       color: #00bbb4;
       margin: 6% 0px;
+    }
+    // font-family: 'Sarabun', sans-serif;
+    .MuiPaper-rounded {
+      box-shadow: unset;
+    }
+    .contentDiv {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      padding-bottom: 20px;
+      min-height: 480px;
+      border: 1px solid #d5d5d5;
+      box-sizing: border-box;
+      .cardContentWrap {
+        .MuiCardContent-root {
+          text-align: center;
+        }
+        .MuiTypography-root {
+          font-weight: 600;
+          font-size: 21px;
+          font-family: "Sarabun", sans-serif !important;
+        }
+        .product-price {
+          color: #00bbb4;
+          margin: 6% 0px;
+          .cancelLine {
+            color: #6e6e6e;
+            text-decoration: line-through;
+          }
+        }
+      }
     }
   }
 }

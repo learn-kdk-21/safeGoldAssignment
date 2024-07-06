@@ -1,0 +1,28 @@
+.FAQWrapper {
+  margin: 50px 100px;
+  .FAQTitle {
+    color: #083863 !important;
+    font-weight: 700;
+    font-size: 32px;
+  }
+  .questionHead {
+    padding-left: 3rem;
+    padding-right: 7rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    .FAQquestionTitle {
+      color: #666666;
+      font-weight: 400;
+      font-size: 22px;
+      cursor: pointer;
+    }
+  }
+  .answerFAQ {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+    padding: 2.4rem 0rem;
+    .horizontalLine {
+    }
+  }
+}
