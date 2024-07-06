@@ -1,0 +1,33 @@
+.product-price {
+  font: 600 20px / 15px Sarabun;
+  color: #00bbb4;
+  margin: 6% 0px;
+}
+// font-family: 'Sarabun', sans-serif;
+.MuiPaper-rounded {
+  box-shadow: unset;
+}
+.contentDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+  min-height: 480px;
+  border: 1px solid #d5d5d5;
+  box-sizing: border-box;
+  .cardContentWrap {
+    .MuiCardContent-root {
+      text-align: center;
+    }
+    .MuiTypography-root {
+      font-weight: 600;
+      font-size: 18px;
+      font-family: "Sarabun", sans-serif !important;
+    }
+    .product-price {
+      color: #00bbb4;
+      margin: 6% 0px;
+    }
+  }
+}

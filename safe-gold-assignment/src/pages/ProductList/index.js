@@ -55,7 +55,7 @@ export const ProductList = () => {
         <div className="pincodeWrapper">
           <h4 class="allProductsHeading">All Products</h4>
           <div className="pincodeDiv">
-            <div>
+            <div className="inputForm">
               <img
                 src={blackLocPointer}
                 alt="Location pointer image"
