@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import AppBar from "@mui/material/AppBar";
@@ -14,6 +15,8 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import { Modal } from "../../components/Modal";
+import { LoginForm } from "../LoginForm";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -51,8 +54,23 @@ export const Header = () => {
       isPrivate: false,
     },
   ];
+
+  ///Set up for login modal
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
   const handleRouting = (page) => {
-    navigate(page.path);
+    if (page.path == "/login") {
+      setModalOpen(true);
+    } else {
+      navigate(page.path);
+    }
   };
 
   return (
@@ -166,6 +184,9 @@ export const Header = () => {
           </Toolbar>
         </Container>
       </AppBar>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <LoginForm onClose={closeModal} />
+      </Modal>
     </>
   );
 };
