@@ -1,7 +1,5 @@
 import React from 'react';
 import { ProductCard } from '../../components/ProductCard';
-import { Advertisement } from '../../components/Advertisement';
-// import bannerImage from "../../assets/bannerImage.png";
 import truck from '../../assets/truck.png';
 import certificate from '../../assets/certificate.png';
 import priceTag from '../../assets/price-tag.png';
@@ -142,7 +140,6 @@ export const ProductList = () => {
           </div>
         </div>
         <ProductCard productListData={productListData} />
-        <Advertisement />
       </div>
 
       <div className="">

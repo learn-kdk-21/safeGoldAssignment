@@ -7,9 +7,60 @@
     font-size: 25px;
   }
   .productDetailsResponsiveWrap {
+    display: flex;
+    padding: 0 6%;
+
     .imageSliderWrap {
+      width: 50%;
+      .ProductImagesWrap {
+      }
     }
     .productDetailsContentWrap {
+      width: 50%;
+      .imageNameWrap {
+        color: #00bbb4;
+        font-weight: 600;
+        font-size: 28px;
+        font-family: 'Sarabun', sans-serif !important;
+        margin-top: 1rem;
+      }
+      .priceBuyNowButtonWrap {
+        margin: 20px 0 50px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .priceWrap {
+          font-weight: 700;
+          font-size: 24px;
+          font-family: 'Sarabun', sans-serif !important;
+          color: #083863;
+        }
+      }
+      .uspDetailsWrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        word-break: break-word;
+        justify-content: space-between;
+        color: #083863;
+        margin-bottom: 10px;
+        .uspDetailsDiv {
+          text-align: center;
+        }
+        .uspImg {
+          display: block;
+          width: 50px;
+          margin: auto;
+          margin-bottom: 10%;
+          height: 50px;
+        }
+      }
+    }
+  }
+  .previewImageWrap {
+    img {
+      width: 40px;
+      height: 40px;
     }
   }
 }

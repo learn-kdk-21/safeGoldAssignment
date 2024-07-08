@@ -3,13 +3,6 @@ import safeGoldLogo from '../../assets/safegold-logo.svg';
 import vistra from '../../assets/vistra.svg';
 import footer2 from '../../assets/footer-2.svg';
 import './index.scss';
-import blueFooter1Phone from '../../assets/blue-footer-1-phone.svg';
-import blueFooter2Mail from '../../assets/blue-footer-2-mail.svg';
-import blueFooter3Location from '../../assets/blue-footer-3-location.svg';
-import twitterBlue from '../../assets/twitter-blue.svg';
-import linkedInBlue from '../../assets/linkedin-blue.svg';
-import instagramBlue from '../../assets/instagram-blue.svg';
-import facebookBlue from '../../assets/facebook-blue.svg';
 
 export const Footer = () => {
   return (
@@ -18,7 +11,7 @@ export const Footer = () => {
         <div className="footer-inner">
           <div className="col col1">
             <div className="logoContainer">
-              <img src={safeGoldLogo} />
+              <img src={safeGoldLogo} alt="safeGold" />
             </div>
             <p>
               SafeGold is an organised and transparent method of buying and
@@ -26,8 +19,8 @@ export const Footer = () => {
               laws and regulations.
             </p>
             <div className="otherLogoContainer">
-              <img src={vistra} className="vistra" />
-              <img src={footer2} className="footer2" />
+              <img src={vistra} className="vistra" alt="vistra" />
+              <img src={footer2} className="footer2" alt="footer2" />
             </div>
             <div className="copyright-text">
               ©
@@ -101,7 +94,11 @@ export const Footer = () => {
             </div>
 
             <div className="social-media-links">
-              <a href="https://www.facebook.com/SafeGoldIndia/" target="_blank">
+              <a
+                href="https://www.facebook.com/SafeGoldIndia/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div className="icon-container">
                   <img
                     src="https://d2swkjwe31rb4i.cloudfront.net/images/components/footer/facebook-blue.svg"
@@ -113,6 +110,7 @@ export const Footer = () => {
               <a
                 href="https://www.linkedin.com/company/safegold-india/"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="icon-container">
                   <img
@@ -124,7 +122,11 @@ export const Footer = () => {
                 </div>
               </a>
 
-              <a href="https://www.instagram.com/safegoldhq/" target="_blank">
+              <a
+                href="https://www.instagram.com/safegoldhq/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div className="icon-container">
                   <img
                     data-src="https://d2swkjwe31rb4i.cloudfront.net/images/components/footer/instagram-blue.svg"
@@ -135,7 +137,11 @@ export const Footer = () => {
                 </div>
               </a>
 
-              <a href="https://twitter.com/safegold_india" target="_blank">
+              <a
+                href="https://twitter.com/safegold_india"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div className="icon-container">
                   <img
                     data-src="https://d2swkjwe31rb4i.cloudfront.net/images/components/footer/twitter-blue.svg"
