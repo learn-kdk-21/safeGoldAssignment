@@ -1,76 +1,76 @@
-import React from "react";
-import { ProductCard } from "../../components/ProductCard";
-import { Advertisement } from "../../components/Advertisement";
+import React from 'react';
+import { ProductCard } from '../../components/ProductCard';
+import { Advertisement } from '../../components/Advertisement';
 // import bannerImage from "../../assets/bannerImage.png";
-import truck from "../../assets/truck.png";
-import certificate from "../../assets/certificate.png";
-import priceTag from "../../assets/price-tag.png";
-import coinsTabImg from "../../assets/coins-tab-img.png";
-import blackLocPointer from "../../assets/black-loc-pointer.svg";
-import "./index.scss";
-import { FAQs } from "../../components/FAQ";
-import { Footer } from "../../components/Footer";
+import truck from '../../assets/truck.png';
+import certificate from '../../assets/certificate.png';
+import priceTag from '../../assets/price-tag.png';
+import coinsTabImg from '../../assets/coins-tab-img.png';
+import blackLocPointer from '../../assets/black-loc-pointer.svg';
+import './index.scss';
+import { FAQs } from '../../components/FAQ';
+import { Footer } from '../../components/Footer';
 
 let productListData = [
   {
-    title: "1 gm SafeGold Coin (99.99%)",
+    title: '1 gm SafeGold Coin (99.99%)',
     fullPrice: 4535,
     discountedPrice: 4235,
-    imgAddress: require("../../assets/1gm_back.jpeg"),
+    imgAddress: require('../../assets/1gm_back.jpeg'),
   },
   {
-    title: "5 gm SafeGold Bar (99.99%)",
+    title: '5 gm SafeGold Bar (99.99%)',
     fullPrice: 4535,
     discountedPrice: 4235,
-    imgAddress: require("../../assets/5gm_bar_9999_front.jpeg"),
+    imgAddress: require('../../assets/5gm_bar_9999_front.jpeg'),
   },
   {
-    title: "5 gm SafeGold coin (99.99%)",
+    title: '5 gm SafeGold coin (99.99%)',
     fullPrice: 4535,
     discountedPrice: 4235,
-    imgAddress: require("../../assets/5gm_coin_999_front.jpeg"),
+    imgAddress: require('../../assets/5gm_coin_999_front.jpeg'),
   },
   {
-    title: "10 gm SafeGold coin (99.99%)",
+    title: '10 gm SafeGold coin (99.99%)',
     fullPrice: 4535,
     discountedPrice: 4535,
-    imgAddress: require("../../assets/10gm_bar_9999_front.jpeg"),
+    imgAddress: require('../../assets/10gm_bar_9999_front.jpeg'),
   },
   {
-    title: "20 gm SafeGold coin (99.99%)",
+    title: '20 gm SafeGold coin (99.99%)',
     fullPrice: 4535,
     discountedPrice: 4235,
-    imgAddress: require("../../assets/20gm_bar_9999_front.jpeg"),
+    imgAddress: require('../../assets/20gm_bar_9999_front.jpeg'),
   },
   {
-    title: "1 gm SafeGold Coin (99.99%)",
+    title: '1 gm SafeGold Coin (99.99%)',
     fullPrice: 4535,
     discountedPrice: 4235,
-    imgAddress: require("../../assets/1gm_back.jpeg"),
+    imgAddress: require('../../assets/1gm_back.jpeg'),
   },
   {
-    title: "5 gm SafeGold Bar (99.99%)",
+    title: '5 gm SafeGold Bar (99.99%)',
     fullPrice: 4535,
     discountedPrice: 4235,
-    imgAddress: require("../../assets/5gm_bar_9999_front.jpeg"),
+    imgAddress: require('../../assets/5gm_bar_9999_front.jpeg'),
   },
   {
-    title: "5 gm SafeGold coin (99.99%)",
+    title: '5 gm SafeGold coin (99.99%)',
     fullPrice: 4535,
     discountedPrice: 4535,
-    imgAddress: require("../../assets/5gm_coin_999_front.jpeg"),
+    imgAddress: require('../../assets/5gm_coin_999_front.jpeg'),
   },
   {
-    title: "10 gm SafeGold coin (99.99%)",
+    title: '10 gm SafeGold coin (99.99%)',
     fullPrice: 4535,
     discountedPrice: 4235,
-    imgAddress: require("../../assets/10gm_bar_9999_front.jpeg"),
+    imgAddress: require('../../assets/10gm_bar_9999_front.jpeg'),
   },
   {
-    title: "20 gm SafeGold coin (99.99%)",
+    title: '20 gm SafeGold coin (99.99%)',
     fullPrice: 4535,
     discountedPrice: 4535,
-    imgAddress: require("../../assets/20gm_bar_9999_front.jpeg"),
+    imgAddress: require('../../assets/20gm_bar_9999_front.jpeg'),
   },
 ];
 export const ProductList = () => {
@@ -85,7 +85,7 @@ export const ProductList = () => {
             <div className="uspDetailsDiv">
               <img
                 src={certificate}
-                alt="Gold Coin Brick and card image"
+                alt="Gold Coin Brick and card"
                 className="uspImg"
               />
               24K Pure Gold Quality Guaranteed
@@ -93,7 +93,7 @@ export const ProductList = () => {
             <div className="uspDetailsDiv">
               <img
                 src={truck}
-                alt="Gold Coin Brick and card image"
+                alt="Gold Coin Brick and card"
                 className="uspImg"
               />
               100% Secure with Delivery Insurance
@@ -101,7 +101,7 @@ export const ProductList = () => {
             <div className="uspDetailsDiv">
               <img
                 src={priceTag}
-                alt="Gold Coin Brick and card image"
+                alt="Gold Coin Brick and card"
                 className="uspImg"
               />
               Best Prices in the market
@@ -111,7 +111,7 @@ export const ProductList = () => {
         <div>
           <img
             src={coinsTabImg}
-            alt="Gold Coin Brick and card image"
+            alt="Gold Coin Brick and card"
             width="600"
             height="400"
           />
@@ -124,7 +124,7 @@ export const ProductList = () => {
             <div className="inputForm">
               <img
                 src={blackLocPointer}
-                alt="Location pointer image"
+                alt="Location pointer"
                 className="locPointer"
               />
               <input

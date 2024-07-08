@@ -1,18 +1,19 @@
-import React, { useState } from "react";
-import "./LoginForm.scss";
+import React, { useState } from 'react';
+import './LoginForm.scss';
+import { Button, TextField } from '@mui/material';
 
-export const LoginForm = ({ onClose }) => {
-  const [mobileNumber, setMobileNumber] = useState("");
+export const LoginForm = ({ onClick = () => {}, handleClose = () => {} }) => {
+  const [mobileNumber, setMobileNumber] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic
-    onClose();
+    handleClose();
   };
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
-      <div className="loginText">Login / Signup</div>
+    <form className="loginForm" onSubmit={handleSubmit}>
+      <div className="loginHeaderText">Login / Signup</div>
       <div className="form-group">
         <div className="form-check-inline">
           <input
@@ -34,24 +35,35 @@ export const LoginForm = ({ onClose }) => {
           </label>
         </div>
       </div>
-      <div className="form-label-group">
-        <input
-          id="inputMobile"
-          type="text"
-          placeholder="Enter Mobile Number"
-          minLength={10}
-          maxLength={10}
-          value={mobileNumber}
-          onChange={(e) => setMobileNumber(e.target.value)}
-          className="form-control"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <button type="btn">Proceed</button>
-      </div>
-      <p>
-        By proceeding you agree to our <a href="#">Terms and Conditions</a>
+      <TextField
+        sx={{ margin: '20px 0' }}
+        className="phoneInputWrap"
+        maxLength={10}
+        minLength={10}
+        id="standard-basic"
+        label="Enter Mobile Number"
+        variant="standard"
+        onChange={(e) => setMobileNumber(e.target.value)}
+        value={mobileNumber}
+        fullWidth
+      />
+      <Button
+        onClick={() => onClick()}
+        sx={{
+          textTransform: 'none',
+          color: 'white !important',
+          margin: '24px 0',
+        }}
+        variant="contained"
+        fullWidth
+      >
+        Proceed
+      </Button>
+      <p className="footerTextWrap">
+        By proceeding you agree to our{' '}
+        <a className="termsWrap" href="/">
+          Terms and Conditions
+        </a>
       </p>
     </form>
   );

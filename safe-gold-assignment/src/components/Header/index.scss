@@ -1,0 +1,79 @@
+.headerWrap {
+  margin: 1rem 0;
+  .logoWrap {
+    padding-right: 3rem;
+  }
+
+  .MuiBox-root {
+    align-items: center;
+    justify-content: flex-end;
+    .buttonWrap {
+      position: relative;
+    }
+    .buttonWrap:active::before {
+      content: '';
+      position: absolute;
+      width: 42px;
+      border: 1.5px solid #083863;
+      background: #083863;
+      margin: 0 auto;
+      border-radius: 24px;
+      top: 1.9rem;
+    }
+    .textShine {
+      background: linear-gradient(
+        110deg,
+        rgba(240, 164, 48, 1),
+        45%,
+        rgba(255, 255, 20, 1),
+        55%,
+        rgba(240, 164, 48, 1)
+      );
+      background-size: 260% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textShine 2.5s ease-out infinite alternate;
+    }
+    @keyframes textShine {
+      100% {
+        background-position: -200%;
+      }
+    }
+    .coinDropWrap {
+      width: 20px;
+      margin-left: 8px;
+      display: inline-block;
+      transform: none;
+    }
+  }
+
+  .MuiButtonBase-root {
+    text-decoration: none;
+    color: #083863;
+    font-weight: 600;
+    font-size: 16px;
+    outline: 0;
+    font-family: 'Sarabun', sans-serif !important;
+  }
+  .MuiButtonBase-root:hover {
+    color: #00bbb4;
+    background-color: unset;
+  }
+  .buttonWrap {
+    position: relative;
+    margin: 0;
+  }
+  .signUpButton {
+    color: #fff;
+    background: #00bbb4;
+    border-radius: 4px;
+    border: 1px solid #00bbb4;
+    padding: 10px 24px;
+    font-size: 16px;
+    box-shadow: 0 10px 30px -12px rgba(0, 187, 180, 0.6) !important;
+  }
+  .MuiPaper-root {
+    box-shadow: unset;
+  }
+}

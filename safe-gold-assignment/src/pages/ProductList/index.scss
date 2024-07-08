@@ -61,7 +61,7 @@
         font-weight: normal;
       }
 
-      input[type="tel"] {
+      input[type='tel'] {
         background: transparent;
         border: 0px;
         outline: none;
@@ -72,6 +72,6 @@
     }
   }
 }
-/* .allProductsHeading {
-    margin-bottom: 0.5rem;
-  } */
+.allProductsHeading {
+  margin: unset;
+}

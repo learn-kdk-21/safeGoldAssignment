@@ -1,0 +1,51 @@
+.otpFormWrap {
+  .otpHeaderText {
+    font-size: 32px;
+    font-family: 'Sarabun', sans-serif !important;
+    color: #00bbb4;
+    margin-bottom: 20px;
+  }
+
+  .verifyMobileTextWrap {
+    display: flex;
+    align-items: center;
+    color: #b2b1b1;
+    .numberWrap {
+      font-family: 'Sarabun', sans-serif !important;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 26px;
+      color: #000000;
+      margin: 0 5px;
+    }
+    .changeWrap {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 21px;
+      text-decoration-line: underline;
+      color: #bf9f41;
+      cursor: pointer;
+    }
+  }
+  .disabledResendWrap {
+    color: #b2b1b1;
+  }
+
+  .footerTextWrap {
+    margin: 0;
+    color: #b2b1b1;
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  .termsWrap {
+    color: #bf9f41;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

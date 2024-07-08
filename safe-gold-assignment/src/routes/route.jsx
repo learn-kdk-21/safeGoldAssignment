@@ -1,40 +1,40 @@
-import { createBrowserRouter } from "react-router-dom";
-import { PublicLayouts } from "../components/Layouts/publicLayouts";
-import { Login } from "../pages/Login";
-import { ProductDetails } from "../pages/ProductDetails";
-import { ProductList } from "../pages/ProductList";
-
+import { createBrowserRouter } from 'react-router-dom';
+import { Login } from '../pages/Login';
+import { ProductDetails } from '../pages/ProductDetails';
+import { ProductList } from '../pages/ProductList';
+import { PublicLayout } from '../components/Layouts/PublicLayout';
+import { PrivateLayout } from '../components/Layouts/PrivateLayout';
 const route = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: (
-      <PublicLayouts>
+      <PublicLayout>
         <ProductList />
-      </PublicLayouts>
+      </PublicLayout>
     ),
   },
   {
-    path: "/list",
+    path: '/product-list',
     element: (
-      <PublicLayouts>
+      <PublicLayout>
         <ProductList />
-      </PublicLayouts>
+      </PublicLayout>
     ),
   },
-  //   {
-  //     path: "/details",
-  //     element: (
-  //       <PublicLayouts>
-  //         <ProductDetails />
-  //       </PublicLayouts>
-  //     ),
-  //   },
   {
-    path: "/login",
+    path: '/product-details',
     element: (
-      <PublicLayouts>
+      <PrivateLayout>
+        <ProductDetails />
+      </PrivateLayout>
+    ),
+  },
+  {
+    path: '/login',
+    element: (
+      <PublicLayout>
         <Login />
-      </PublicLayouts>
+      </PublicLayout>
     ),
   },
 ]);

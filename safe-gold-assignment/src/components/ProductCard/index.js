@@ -1,15 +1,20 @@
-import * as React from "react";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import oneGmBack from "../../assets/1gm_back.jpeg";
-import "./ProductCard.scss";
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { useNavigate } from 'react-router-dom';
+
+import './ProductCard.scss';
 
 export const ProductCard = ({ productListData }) => {
-  // const productListDataArr = productListData.productListData;
+  const navigate = useNavigate();
+
+  const handleNavigate = (path, productId) => {
+    navigate(path);
+  };
   return (
     <div className="productCardParent">
       {productListData.map((product, index) => {
@@ -18,24 +23,24 @@ export const ProductCard = ({ productListData }) => {
           <div key={index} className="productCardWrap">
             <Card
               sx={{
-                maxWidth: 345,
-                position: "relative",
-                marginRight: "1%",
-                marginBottom: "1%",
+                height: '100%',
+                width: '100%',
+                minWidth: 345,
+                position: 'relative',
               }}
             >
               {differencePrice > 0 ? (
                 <Card
                   sx={{
-                    position: "absolute",
-                    padding: "5px 10px",
-                    backgroundColor: "#E7F5F6",
-                    color: "#083863",
-                    fontWeight: "600",
-                    fontSize: "13px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "10px",
+                    position: 'absolute',
+                    padding: '5px 10px',
+                    backgroundColor: 'rgba(203, 230, 230, 0.5)',
+                    color: '#083863',
+                    fontWeight: '600',
+                    fontSize: '13px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
                   }}
                 >
                   <div className="percentWrap">%</div>Akshay Tritya Offer
@@ -49,8 +54,11 @@ export const ProductCard = ({ productListData }) => {
                   <CardMedia
                     component="img"
                     alt="green iguana"
-                    sx={{ width: "65%", margin: "auto", height: "auto" }}
-                    // height="140"
+                    sx={{
+                      width: '13rem',
+                      margin: 'auto',
+                      height: '15rem',
+                    }}
                     image={product.imgAddress}
                   />
                   <CardContent>
@@ -72,7 +80,7 @@ export const ProductCard = ({ productListData }) => {
                       >
                         <span className="cancelLine">
                           ₹ {product.fullPrice}
-                        </span>{" "}
+                        </span>{' '}
                         Save ₹ {product.fullPrice - product.discountedPrice}
                       </Typography>
                     ) : (
@@ -82,15 +90,16 @@ export const ProductCard = ({ productListData }) => {
                 </div>
                 <CardActions className="cardButtonWrap">
                   <Button
+                    onClick={() => handleNavigate('/product-details', index)}
                     variant="contained"
                     size="small"
                     className="buttonViewDetails"
                     style={{
-                      backgroundColor: "#00bbb4",
-                      color: "#fff",
-                      height: "48px",
-                      borderRadius: "5px",
-                      minWidth: "120px",
+                      backgroundColor: '#00bbb4',
+                      color: '#fff',
+                      height: '48px',
+                      borderRadius: '5px',
+                      minWidth: '120px',
                     }}
                   >
                     View Details

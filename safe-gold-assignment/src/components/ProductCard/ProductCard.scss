@@ -1,12 +1,18 @@
 .productCardParent {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin: 50px 100px;
+  display: grid;
+  gap: 16px;
+  margin: 0 100px;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
   .productCardWrap {
-    flex: 0 0 32.333%;
-    // margin-left: 100px;
+    overflow: hidden;
     .percentWrap {
       height: 20px;
       width: 20px;
@@ -18,11 +24,12 @@
       color: white;
     }
     .product-price {
-      font: 600 20px / 15px Sarabun;
+      font-weight: 600;
+      font-size: 20px;
+      font-family: 'Sarabun', sans-serif !important;
       color: #00bbb4;
       margin: 6% 0px;
     }
-    // font-family: 'Sarabun', sans-serif;
     .MuiPaper-rounded {
       box-shadow: unset;
     }
@@ -38,11 +45,12 @@
       .cardContentWrap {
         .MuiCardContent-root {
           text-align: center;
+          min-height: 9rem;
         }
         .MuiTypography-root {
           font-weight: 600;
           font-size: 21px;
-          font-family: "Sarabun", sans-serif !important;
+          font-family: 'Sarabun', sans-serif !important;
         }
         .product-price {
           color: #00bbb4;
