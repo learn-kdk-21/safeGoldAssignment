@@ -1,15 +1,19 @@
 .productListWrap {
   .bannerWrapper {
-    margin: 50px 100px;
+    padding: 130px 100px 90px 100px;
     display: flex;
     justify-content: space-between;
+    background: url('../../assets/headerSlantBgDesktop.svg') 0px -73px no-repeat; /* Apply background image with position and no-repeat */
+    background-size: cover;
   }
 
   .bannerHeader {
-    /* font: 800 48px / 60px Sarabun; */
+    font-family: 'Sarabun', sans-serif !important;
+    font-size: 48px;
     color: #083863;
     margin-bottom: 16%;
     font-weight: 800;
+    margin-top: 0;
   }
   .uspDetailsWrapper {
     display: flex;
@@ -29,17 +33,20 @@
     height: 50px;
   }
   .pincodeWrapper {
-    font: 800 32px / 55.8px Sarabun;
+    font-weight: 800;
+    font-size: 32px;
+    font-family: 'Sarabun', sans-serif !important;
     color: #083863;
-    margin: 50px 100px;
-    margin-bottom: 4%;
+    margin: 10px 50px 50px 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     .pincodeDiv {
       background: #f7f7f7;
       color: #a6a0a0;
-      font: 600 16px / 20px Sarabun;
+      font-weight: 600;
+      font-size: 16px;
+      font-family: 'Sarabun', sans-serif !important;
       border-radius: 5px;
       height: 64px;
       width: 472px;

@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
-import './index.scss';
 import { Button, TextField } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { updateLoginStatus } from '../../store/reducers/authentication';
+import './index.scss';
 
 export const OtpPopup = ({
   handleClose = () => {},
   phoneNumber = '1000000018',
 }) => {
   const [otp, setOtp] = useState('');
-
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
+    if (otp == '111111') {
+      dispatch(updateLoginStatus(false));
+      localStorage.setItem('authSafeGold', '123456');
+    }
     handleClose();
-
-    // Handle form submission logic
   };
 
   return (

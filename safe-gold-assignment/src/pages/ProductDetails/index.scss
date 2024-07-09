@@ -13,6 +13,34 @@
     .imageSliderWrap {
       width: 50%;
       .ProductImagesWrap {
+        box-sizing: border-box;
+        margin: auto;
+        display: flex !important;
+        justify-content: center;
+        img {
+          max-width: 50%;
+          max-height: 50%;
+          object-fit: cover;
+        }
+      }
+      ul {
+        li {
+          margin: 0 22px;
+        }
+        .slick-active {
+          img {
+            border: 0.5px solid #00bbb4;
+          }
+        }
+      }
+
+      .previewImageWrap {
+        width: 100%;
+
+        img {
+          object-fit: cover;
+          border: 0.5px solid #ccc;
+        }
       }
     }
     .productDetailsContentWrap {
@@ -24,8 +52,8 @@
         font-family: 'Sarabun', sans-serif !important;
         margin-top: 1rem;
       }
-      .priceBuyNowButtonWrap {
-        margin: 20px 0 50px 0;
+      .priceDetailWrap {
+        margin: 0 0 50px 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -34,6 +62,43 @@
           font-size: 24px;
           font-family: 'Sarabun', sans-serif !important;
           color: #083863;
+        }
+      }
+      .pincodeDiv {
+        margin: 30px 0 50px 0;
+        background: #f7f7f7;
+        color: #a6a0a0;
+        font-weight: 600;
+        font-size: 16px;
+        font-family: 'Sarabun', sans-serif !important;
+        border-radius: 5px;
+        height: 64px;
+        width: 100%;
+        /* padding: 20px 10px; */
+        .inputForm {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          padding: 0px 10px;
+        }
+        img {
+          margin-right: 2%;
+          vertical-align: middle;
+          border-style: none;
+        }
+        span {
+          color: #00bbb4;
+          cursor: pointer;
+          font-weight: normal;
+        }
+
+        input[type='tel'] {
+          background: transparent;
+          border: 0px;
+          outline: none;
+          width: 63%;
+          font-weight: normal;
+          padding: 20px 0px;
         }
       }
       .uspDetailsWrapper {
@@ -46,6 +111,9 @@
         margin-bottom: 10px;
         .uspDetailsDiv {
           text-align: center;
+          font-weight: 500;
+          font-size: 18px;
+          font-family: 'Sarabun', sans-serif !important;
         }
         .uspImg {
           display: block;
@@ -55,6 +123,33 @@
           height: 50px;
         }
       }
+      .productDescriptionWrap {
+        margin-top: 2rem;
+        .descriptionTitleWrap {
+          font-size: 24px;
+          font-weight: 800;
+          font-family: 'Sarabun', sans-serif !important;
+          color: #212529;
+        }
+        ul {
+          list-style-type: none;
+        }
+        .listItemWrap {
+          font-size: 17px;
+          font-weight: 400;
+          font-family: 'Sarabun', sans-serif !important;
+          color: #353636;
+        }
+        .listItemWrap::before {
+          content: '\2022';
+          color: #d2c061;
+          font-weight: bold;
+          display: inline-block;
+          width: 1em;
+          margin-left: -1em;
+          font-size: 24px;
+        }
+      }
     }
   }
   .previewImageWrap {
@@ -62,5 +157,130 @@
       width: 40px;
       height: 40px;
     }
+  }
+  .productDetailAdvertisementWrap {
+    padding: 0 6%;
+  }
+  .reviewFrequentlyWrap {
+    padding: 0 6%;
+    display: flex;
+    justify-content: space-between;
+    .reviewSectionWrap {
+      width: 57%;
+      .reviewTitleGroupWrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .reviewTitleWrap {
+          color: #353636;
+          font-size: 32px;
+          font-weight: 800;
+          font-family: 'Sarabun', sans-serif !important;
+        }
+        .reviewCountWrap {
+          color: #353636;
+          font-size: 25px;
+          font-weight: 800;
+          font-family: 'Sarabun', sans-serif !important;
+          margin-top: 1rem;
+        }
+        .averageReviewWrap {
+          color: #353636;
+          font-size: 20px;
+          font-weight: 600;
+          font-family: 'Sarabun', sans-serif !important;
+        }
+      }
+      .reviewListWrap {
+        margin-top: 3rem;
+        .reviewWrap {
+          margin-bottom: 3rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .nameGroupWrap {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .NameInitialsWrap {
+              color: #ffffff;
+              font-size: 25px;
+              font-weight: 400;
+              font-family: 'Sarabun', sans-serif !important;
+              background-color: #00bbb4;
+              display: inline-block;
+              border-radius: 50%;
+              padding: 10px;
+            }
+            .nameWrap {
+              color: #353636;
+              font-size: 25px;
+              font-weight: 800;
+              font-family: 'Sarabun', sans-serif !important;
+            }
+            .MuiRating-root {
+              margin-top: 10px;
+              margin-bottom: 0;
+            }
+          }
+          .commentWrap {
+            margin-top: 1rem;
+            color: #818d8d;
+            font-size: 20px;
+            font-weight: 600;
+            font-family: 'Sarabun', sans-serif !important;
+          }
+          .dateWrap {
+            color: #c0c3c3;
+            font-size: 20px;
+            font-weight: 600;
+            font-family: 'Sarabun', sans-serif !important;
+          }
+        }
+      }
+    }
+    .frequentlyWrap {
+      width: 36%;
+      .FAQWrapper {
+        margin: 0;
+        .FAQTitle {
+          margin: 0;
+          color: #00bbb4 !important;
+          font-weight: 600;
+          font-size: 18px;
+          font-family: 'Sarabun', sans-serif !important;
+        }
+        .questionWrapper {
+          .questionHead {
+            .MuiButtonBase-root {
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+    .MuiPagination-root {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .MuiPaginationItem-previousNext {
+        border: unset;
+      }
+      .Mui-selected {
+        border: unset;
+        background-color: #00bbb4;
+        color: #ffffff !important;
+        font-family: 'Sarabun', sans-serif !important;
+      }
+      .MuiPaginationItem-page {
+        border: unset;
+        color: #ecdede;
+        font-family: 'Sarabun', sans-serif !important;
+      }
+    }
+  }
+  .similarProductSliderSectionWrap {
+    margin-top: 60px;
   }
 }

@@ -40,6 +40,11 @@
         background-position: -200%;
       }
     }
+    .buyCoinsWrap {
+      background-color: #cdcd958a;
+      border-radius: 20px;
+      color: #53651c;
+    }
     .coinDropWrap {
       width: 20px;
       margin-left: 8px;
@@ -47,7 +52,11 @@
       transform: none;
     }
   }
-
+  .userIconWrap {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
   .MuiButtonBase-root {
     text-decoration: none;
     color: #083863;

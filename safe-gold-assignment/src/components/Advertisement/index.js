@@ -5,6 +5,7 @@ import freeInsurance from '../../assets/freeInsurance.png';
 import qualityCertified from '../../assets/qualityCertified.png';
 import orderTracking from '../../assets/orderTracking.png';
 import './index.scss';
+
 const advertiseData = [
   { id: 1, img: qualityCertified, title: '24K Guaranteed Quality Certified' },
   { id: 2, img: freeInsurance, title: 'Free Insurance on Delivery' },
@@ -20,7 +21,7 @@ export const Advertisement = () => {
       </div>
       {advertiseData &&
         advertiseData.map((item, index) => (
-          <div className="advertisementContentWrap">
+          <div key={index} className="advertisementContentWrap">
             <img src={item.img} alt="img" />
             <div className="contentTitleWrap">{item.title}</div>
           </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ProductCard } from '../../components/ProductCard';
 import truck from '../../assets/truck.png';
 import certificate from '../../assets/certificate.png';
@@ -8,70 +8,34 @@ import blackLocPointer from '../../assets/black-loc-pointer.svg';
 import './index.scss';
 import { FAQs } from '../../components/FAQ';
 import { Footer } from '../../components/Footer';
+import axios from 'axios';
 
-let productListData = [
-  {
-    title: '1 gm SafeGold Coin (99.99%)',
-    fullPrice: 4535,
-    discountedPrice: 4235,
-    imgAddress: require('../../assets/1gm_back.jpeg'),
-  },
-  {
-    title: '5 gm SafeGold Bar (99.99%)',
-    fullPrice: 4535,
-    discountedPrice: 4235,
-    imgAddress: require('../../assets/5gm_bar_9999_front.jpeg'),
-  },
-  {
-    title: '5 gm SafeGold coin (99.99%)',
-    fullPrice: 4535,
-    discountedPrice: 4235,
-    imgAddress: require('../../assets/5gm_coin_999_front.jpeg'),
-  },
-  {
-    title: '10 gm SafeGold coin (99.99%)',
-    fullPrice: 4535,
-    discountedPrice: 4535,
-    imgAddress: require('../../assets/10gm_bar_9999_front.jpeg'),
-  },
-  {
-    title: '20 gm SafeGold coin (99.99%)',
-    fullPrice: 4535,
-    discountedPrice: 4235,
-    imgAddress: require('../../assets/20gm_bar_9999_front.jpeg'),
-  },
-  {
-    title: '1 gm SafeGold Coin (99.99%)',
-    fullPrice: 4535,
-    discountedPrice: 4235,
-    imgAddress: require('../../assets/1gm_back.jpeg'),
-  },
-  {
-    title: '5 gm SafeGold Bar (99.99%)',
-    fullPrice: 4535,
-    discountedPrice: 4235,
-    imgAddress: require('../../assets/5gm_bar_9999_front.jpeg'),
-  },
-  {
-    title: '5 gm SafeGold coin (99.99%)',
-    fullPrice: 4535,
-    discountedPrice: 4535,
-    imgAddress: require('../../assets/5gm_coin_999_front.jpeg'),
-  },
-  {
-    title: '10 gm SafeGold coin (99.99%)',
-    fullPrice: 4535,
-    discountedPrice: 4235,
-    imgAddress: require('../../assets/10gm_bar_9999_front.jpeg'),
-  },
-  {
-    title: '20 gm SafeGold coin (99.99%)',
-    fullPrice: 4535,
-    discountedPrice: 4535,
-    imgAddress: require('../../assets/20gm_bar_9999_front.jpeg'),
-  },
-];
 export const ProductList = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://safegoldassignment-default-rtdb.firebaseio.com/products.json'
+        );
+        const data = response.data;
+
+        // Convert the object to an array
+        const productArray = Object.keys(data).map((key) => ({
+          id: key,
+          ...data[key],
+        }));
+
+        setProducts(productArray);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="productListWrap">
       <div className="bannerWrapper">
@@ -139,7 +103,7 @@ export const ProductList = () => {
             </div>
           </div>
         </div>
-        <ProductCard productListData={productListData} />
+        <ProductCard productListData={products} />
       </div>
 
       <div className="">

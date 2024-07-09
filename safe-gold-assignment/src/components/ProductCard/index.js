@@ -6,20 +6,34 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
-
-import './ProductCard.scss';
 import { Advertisement } from '../Advertisement';
+import './ProductCard.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateLoginStatus } from '../../store/reducers/authentication';
 
-export const ProductCard = ({ productListData }) => {
+export const ProductCard = ({ productListData = [] }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const openLoginModal = useSelector(
+    (state) => state?.authentication?.auth?.openLoginModal
+  );
+  console.log('openLoginModal', openLoginModal);
+  const authSafeGold = localStorage.getItem('authSafeGold');
 
   const handleNavigate = (path, productId) => {
-    navigate(path);
+    if (authSafeGold) {
+      const fullPath = `${path}?productId=${encodeURIComponent(productId)}`;
+      navigate(fullPath);
+    } else {
+      console.log('hi');
+      dispatch(updateLoginStatus(true));
+    }
   };
+
   return (
     <div className="productCardParent">
       {productListData.map((product, index) => {
-        let differencePrice = product.fullPrice - product.discountedPrice;
+        let differencePrice = product.marketPrice - product.currentPrice;
         return (
           <React.Fragment key={index}>
             <div className="productCardWrap">
@@ -45,7 +59,8 @@ export const ProductCard = ({ productListData }) => {
                       gap: '10px',
                     }}
                   >
-                    <div className="percentWrap">%</div>Akshay Tritya Offer
+                    <div className="percentWrap">%</div>
+                    {product.offer}
                   </Card>
                 ) : (
                   <></>
@@ -61,18 +76,18 @@ export const ProductCard = ({ productListData }) => {
                         margin: 'auto',
                         height: '15rem',
                       }}
-                      image={product.imgAddress}
+                      image={product.imageUrl}
                     />
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
-                        {product.title}
+                        {product.name}
                       </Typography>
                       <Typography
                         variant="body2"
                         color="text.secondary"
                         className="product-price"
                       >
-                        ₹ {product.discountedPrice}
+                        ₹ {product?.currentPrice}
                       </Typography>
                       {differencePrice > 0 ? (
                         <Typography
@@ -81,9 +96,9 @@ export const ProductCard = ({ productListData }) => {
                           className="product-price"
                         >
                           <span className="cancelLine">
-                            ₹ {product.fullPrice}
+                            ₹ {product?.marketPrice}
                           </span>{' '}
-                          Save ₹ {product.fullPrice - product.discountedPrice}
+                          Save ₹ {product?.marketPrice - product?.currentPrice}
                         </Typography>
                       ) : (
                         <></>
@@ -92,7 +107,9 @@ export const ProductCard = ({ productListData }) => {
                   </div>
                   <CardActions className="cardButtonWrap">
                     <Button
-                      onClick={() => handleNavigate('/product-details', index)}
+                      onClick={() =>
+                        handleNavigate('/product-details', product?.id)
+                      }
                       variant="contained"
                       size="small"
                       className="buttonViewDetails"
